@@ -10,9 +10,10 @@ function App() {
       
       <ul>
       { sampleProducts.map(product => 
-        <li>
+        <li key={product.slung}>
           <img src={product.image} width={50} height={50}/>
           <h2>{product.name}</h2>
+          <p>${product.price}</p>
         </li>)
       }
       </ul>
