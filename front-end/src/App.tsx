@@ -1,11 +1,13 @@
-import { useState } from 'react'
+// import React from "react";
+
 import { sampleProducts } from './data'
+
 
 function App() {
 
   return (
     <>
-    <header>Hallo</header>
+    <header className='test'>Hallo</header>
     <div>
       
       <ul>
