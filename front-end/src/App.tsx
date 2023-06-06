@@ -14,7 +14,7 @@ function App() {
         <div>
           <ul>
           { sampleProducts.map(product => 
-            <li key={product.slung}>
+            <li key={product.slug}>
               <img src={product.image} width={50} height={50}/>
               <h2>{product.name}</h2>
               <p>${product.price}</p>

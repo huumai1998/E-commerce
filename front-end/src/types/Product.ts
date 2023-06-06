@@ -1,6 +1,6 @@
 export type Product = {
     name: string
-    slung: string
+    slug: string
     image: string
     category: string
     brand: string
