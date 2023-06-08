@@ -1,3 +1,38 @@
 .nav {
-    width: auto;
+    height: 10vh;
+    width: 100%;
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        .navbar-left {
+            display: flex;
+            gap: 10px;
+            .logo {
+                .navbar-logo {
+                    font-size: 1.5rem;
+                    text-decoration: none;
+                    margin-left: 5%;
+                }
+            }
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 15%;
+            }
+        }
+        .navbar-right {
+            margin-right: 5%;
+        }
+
+      }
+}
+  
+.navbar-link {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
