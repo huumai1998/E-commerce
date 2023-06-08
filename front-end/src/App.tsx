@@ -9,8 +9,8 @@ function App() {
   return (
     <>
     <Router>
-      <header className='test'><Nav /></header>
       < body>
+      <Nav />
         <div>
           <ul>
           { sampleProducts.map(product => 
