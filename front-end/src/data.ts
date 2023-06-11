@@ -36,5 +36,17 @@ export const sampleProducts:Product[] = [
         rating: 1,
         numReviews: 10,
         description: 'fadfaf',
+    },
+    {
+        name: 'Nike Slim Shirt',
+        slug: 'asdf',
+        category: 'scs',
+        image: '../images/3.jpg',
+        price: 23,
+        countInStock: 1000,
+        brand: 'Nike',
+        rating: 1,
+        numReviews: 10,
+        description: 'fadfaf',
     }
 ]
