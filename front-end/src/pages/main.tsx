@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { sampleProducts } from '../data'
+import { Link } from 'react-router-dom';
 
 export const Main: React.FC = () => {
   return (
@@ -10,9 +11,11 @@ export const Main: React.FC = () => {
             <Row>
               { sampleProducts.map(product => 
                 <Col key={product.slug} sm={6} md={4} lg={3}>
-                    <img src={product.image} width={300} height={300}/>
+                    <Link to={'/product/' + product.slug}>
+                    <img src={product.image} width={300} height={300} alt={product.name}/>
                     <h2>{product.name}</h2>
                     <p>${product.price}</p>
+                    </Link>
                 </Col>)
             }
             </Row>

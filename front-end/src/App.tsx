@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Footer, Navigation } from './components';
-import { Main } from './pages';
+import { Main, Product } from './pages';
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <>
             <Route path="/" element={<Main />} />
+            <Route path="product/:slug" element={<Product />}/>
             <Route path="*" element={<Navigate to="/" />} />
           </>
         </Routes>
