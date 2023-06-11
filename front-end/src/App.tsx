@@ -1,7 +1,7 @@
 // import React from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { sampleProducts } from './data'
-import { Navigation } from './components';
+import { Footer, Navigation } from './components';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
           }
           </ul>
         </div>
+        <Footer/>
       </body>
     </Router>
     </>

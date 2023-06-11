@@ -4,7 +4,9 @@ export const Footer: React.FC = () => {
   return (
     <>
     <footer>
-        All right reserved
+        <div className='text-center'>
+            All right reserved
+        </div>
     </footer>
     </>
   )
