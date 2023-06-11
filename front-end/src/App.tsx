@@ -1,7 +1,7 @@
 // import React from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { sampleProducts } from './data'
-import { Nav } from './components';
+import { Navigation } from './components';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <>
     <Router>
       < body>
-      <Nav />
+      <Navigation />
         <div className='d-flex flex-column vh-100'>
           <ul>
           { sampleProducts.map(product => 

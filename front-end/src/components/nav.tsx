@@ -1,14 +1,18 @@
 import React from 'react';
-import { Container, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-export const Nav: React.FC = () => {
+export const Navigation = () => {
   return (
     <>
     <div className="nav">
       <Navbar className='navbar-nav nav-fill w-100 navbar-flex'>
         <Container>
           <Navbar.Brand>LOGO O DAY</Navbar.Brand>
+          <Nav>
+            <Link to="/" className='nav-link'>Cart</Link>
+            <Link to="/" className='nav-link'>Sign In</Link>
+          </Nav>
         </Container>
       </Navbar>
     </div>
