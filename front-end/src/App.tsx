@@ -11,7 +11,7 @@ function App() {
     <Router>
       < body>
       <Nav />
-        <div>
+        <div className='d-flex flex-column vh-100'>
           <ul>
           { sampleProducts.map(product => 
             <li key={product.slug}>
