@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Footer, Navigation } from './components';
-import { Main, Product } from './pages';
+import { MainPages, Product } from './pages';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
         <Navigation />
         <Routes>
           <>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<MainPages />} />
             <Route path="product/:slug" element={<Product />}/>
             <Route path="*" element={<Navigate to="/" />} />
           </>
