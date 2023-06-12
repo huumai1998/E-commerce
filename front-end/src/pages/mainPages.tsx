@@ -8,6 +8,7 @@ import { LoadingBox } from '../components';
 import MessageBox from '../components/messageBox';
 import { ApiError } from '../types/apiError';
 import ProductItem from '../components/productItem';
+import { Helmet } from 'react-helmet-async';
 
 type State = {
   products: Product[],
@@ -69,6 +70,9 @@ return loading ? (
   <div className='d-flex flex-column vh-100'>
     <Container className='mt-3'>
       <Row>
+        <Helmet>
+          <title>Candle Store</title>
+        </Helmet>
           {products.map((product) => (
           <Col key={product.slug} sm={6} md={4} lg={3}>
             <ProductItem product={product}/>
