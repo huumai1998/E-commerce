@@ -7,6 +7,7 @@ import { getError } from '../utils';
 import { LoadingBox } from '../components';
 import MessageBox from '../components/messageBox';
 import { ApiError } from '../types/apiError';
+import ProductItem from '../components/productItem';
 
 type State = {
   products: Product[],
@@ -70,17 +71,7 @@ return loading ? (
       <Row>
           {products.map((product) => (
           <Col key={product.slug} sm={6} md={4} lg={3}>
-            <Link to={'/product/' + product.slug}>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-image"
-                width={250}
-                height={250}
-              />
-              <h2>{product.name}</h2>
-              <p>${product.price}</p>
-            </Link>
+            <ProductItem product={product}/>
           </Col>
        ))}
       </Row>
