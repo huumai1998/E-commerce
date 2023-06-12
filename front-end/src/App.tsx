@@ -9,7 +9,6 @@ import { Footer, Navigation } from './components';
 import { MainPages, Product } from './pages';
 
 function App() {
-
   return (
     <>
     <>

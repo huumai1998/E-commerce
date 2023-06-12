@@ -1,8 +1,20 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext, useEffect } from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { Store } from '../Store';
 
 export const Navigation: React.FC = () => {
+  const {state: {mode}, 
+  dispatch,
+  } = useContext(Store)
+
+  useEffect(() => {
+    document.body.setAttribute('data-bs-theme', mode)
+  }, [mode])
+
+  const switchModeHandler = () => {
+    dispatch({ type: 'SWITCH_MODE' })
+  }
   return (
     <>
     <div className="nav">
@@ -10,6 +22,11 @@ export const Navigation: React.FC = () => {
         <Container>
           <Navbar.Brand>LOGO O DAY</Navbar.Brand>
           <Nav>
+          <Button variant={mode} onClick={switchModeHandler}>
+               <i
+                 className={mode === 'light' ? 'fa fa-sun' : 'fa fa-moon'}
+               ></i>
+          </Button>
             <Link to="/" className='nav-link'>Cart</Link>
             <Link to="/" className='nav-link'>Sign In</Link>
           </Nav>
