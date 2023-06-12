@@ -6,7 +6,7 @@ import EyeView from "./eyeViews"
 function ProductItem({ product }: { product: Product }) {
     return (
       <Card>
-        <Link to={`/product/${product.slug}`}>
+        <Link to={`/product/${product.name}`}>
           <img
             src={product.image}
             className="card-img-top"
@@ -16,7 +16,7 @@ function ProductItem({ product }: { product: Product }) {
           />
         </Link>
         <Card.Body>
-          <Link to={`/product/${product.slug}`}>
+          <Link to={`/product/${product.name}`}>
             <Card.Title>{product.name}</Card.Title>
           </Link>
           <EyeView numReviews={product.numReviews} />

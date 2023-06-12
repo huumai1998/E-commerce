@@ -2,8 +2,8 @@ import { Product } from "./types/Product";
 
 export const sampleProducts:Product[] = [
     {
-        name: 'Nike Slim Shirt',
-        slug: 'asdf',
+        name: 'Candle1',
+        slug: 'candle1',
         category: 'scs',
         image: '../images/1.jpg',
         price: 23,
@@ -13,8 +13,8 @@ export const sampleProducts:Product[] = [
         description: 'fadfaf',
     },
     {
-        name: 'Nike Slim Shirt',
-        slug: 'asdf',
+        name: 'Candle2',
+        slug: 'candle2',
         category: 'scs',
         image: '../images/2.jpg',
         price: 23,
@@ -24,8 +24,8 @@ export const sampleProducts:Product[] = [
         description: 'fadfaf',
     },
     {
-        name: 'Nike Slim Shirt',
-        slug: 'asdf',
+        name: 'Candle3',
+        slug: 'candle3',
         category: 'scs',
         image: '../images/3.jpg',
         price: 23,
@@ -35,8 +35,8 @@ export const sampleProducts:Product[] = [
         description: 'fadfaf',
     },
     {
-        name: 'Nike Slim Shirt',
-        slug: 'asdf',
+        name: 'Candle4',
+        slug: 'candle4',
         category: 'scs',
         image: '../images/3.jpg',
         price: 23,
