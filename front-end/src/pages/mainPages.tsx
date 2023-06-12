@@ -66,22 +66,26 @@ return loading ? (
 ) : error ? (
   <MessageBox variant="danger">{error}</MessageBox>
 ) : (
-  <Row>
-    {products.map((product) => (
-      <Col key={product.slug} sm={6} md={4} lg={3}>
-        <Link to={'/product/' + product.slug}>
-          <img
-            src={product.image}
-            alt={product.name}
-            className="product-image"
-            width={250}
-            height={250}
-          />
-          <h2>{product.name}</h2>
-          <p>${product.price}</p>
-        </Link>
-      </Col>
-    ))}
-  </Row>
+  <div className='d-flex flex-column vh-100'>
+    <Container className='mt-3'>
+      <Row>
+          {products.map((product) => (
+          <Col key={product.slug} sm={6} md={4} lg={3}>
+            <Link to={'/product/' + product.slug}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+                width={250}
+                height={250}
+              />
+              <h2>{product.name}</h2>
+              <p>${product.price}</p>
+            </Link>
+          </Col>
+       ))}
+      </Row>
+    </Container>
+  </div>
 )
 }
