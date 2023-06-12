@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import { sampleProducts } from '../data'
 import { Link } from 'react-router-dom';
 import { Product } from '../types/Product';
 import axios from 'axios';
