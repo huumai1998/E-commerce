@@ -28,6 +28,7 @@ export const Navigation: React.FC = () => {
                ></i>
           </Button>
             <Link to="/cart" className='nav-link'>
+              Cart
                {cart.cartItems.length > 0 && (
                  <Badge pill bg="danger">
                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
