@@ -1,6 +1,5 @@
 import express, {Request, Response} from "express"
 import asyncHandler from 'express-async-handler';
-import { ProductModel } from "../models/product";
 import { UserModel } from "../models/auth.model";
 import { sampleUsers } from "../data";
 
