@@ -59,7 +59,6 @@ export const Product: React.FC = () => {
                  Description:
                  <p>{product.description}</p>
                </ListGroup.Item>
-
                <ListGroup.Item>
                      <Row>
                        <Col>Status:</Col>
