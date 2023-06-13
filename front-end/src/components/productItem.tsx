@@ -20,7 +20,7 @@ function ProductItem({ product }: { product: Product }) {
     const existItem = cartItems.find((x) => x._id === product._id)
     const quantity = existItem ? existItem.quantity + 1 : 1
     if (product.countInStock < quantity) {
-        toast('Sorry. Product is out of stock')
+        toast(`Sorry. ${product.name} is out of stock`)
         return
     }
 
@@ -28,7 +28,7 @@ function ProductItem({ product }: { product: Product }) {
         type: 'CART_ADD_ITEM',
         payload: { ...item, quantity },
       })
-      toast('Product added to the cart')
+      toast(`${product.name} added to the cart`)
     }
 
     return (

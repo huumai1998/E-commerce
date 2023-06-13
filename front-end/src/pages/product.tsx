@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useGetProductDetailsBySlugQuery } from '../hooks/productHooks'
 import { LoadingBox } from '../components'
 import MessageBox from '../components/messageBox'
-import { getError } from '../utils'
+import { convertProductToCartItem, getError } from '../utils'
 import { ApiError } from '../types/apiError'
 import { Badge, Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import EyeView from '../components/eyeViews'
+import { Store } from '../Store'
+import { toast } from 'react-toastify'
 
 export const Product: React.FC = () => {
   const params = useParams()
@@ -19,7 +21,27 @@ export const Product: React.FC = () => {
     error,
   } = useGetProductDetailsBySlugQuery(slug!)
 
+  const { state, dispatch } = useContext(Store)
+  const { cart } = state
 
+  const navigate = useNavigate()
+
+  const addToCartHandler = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === product!._id)
+    const quantity = existItem ? existItem.quantity + 1 : 1
+    if (product!.countInStock < quantity) {
+      toast.warn('Sorry. Product is out of stock')
+      return
+    }
+    dispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...convertProductToCartItem(product!), quantity },
+    })
+    toast.success(`${product!.name} added to the cart`)
+    navigate('/')
+  }
+
+  
   return (
     isLoading ? (
       <LoadingBox /> )
@@ -75,7 +97,7 @@ export const Product: React.FC = () => {
                    {product.countInStock > 0 && (
                      <ListGroup.Item>
                        <div className="d-grid">
-                         <Button variant="primary">
+                         <Button onClick={addToCartHandler} variant="primary">
                            Add to Cart
                          </Button>
                        </div>

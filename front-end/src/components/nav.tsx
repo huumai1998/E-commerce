@@ -27,7 +27,7 @@ export const Navigation: React.FC = () => {
                  className={mode === 'light' ? 'fa fa-sun' : 'fa fa-moon'}
                ></i>
           </Button>
-            <Link to="/" className='nav-link'>
+            <Link to="/cart" className='nav-link'>
               Cart
                {cart.cartItems.length > 0 && (
                  <Badge pill bg="danger">
