@@ -1,48 +1,19 @@
-import { Product } from "./types/Product";
+import { User } from "./models/auth.model";
+import bcrypt from 'bcryptjs';
 
-export const sampleProducts:Product[] = [
+
+
+export const sampleUsers: User[] = [
     {
-        name: 'Candle1',
-        slug: 'candle1',
-        category: 'scs',
-        image: '../images/1.jpg',
-        price: 23,
-        countInStock: 1000,
-        brand: 'Nike',
-        numReviews: 10,
-        description: 'fadfaf',
+      name: 'Joe',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
     },
     {
-        name: 'Candle2',
-        slug: 'candle2',
-        category: 'scs',
-        image: '../images/2.jpg',
-        price: 23,
-        countInStock: 1000,
-        brand: 'Nike',
-        numReviews: 10,
-        description: 'fadfaf',
+      name: 'John',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
     },
-    {
-        name: 'Candle3',
-        slug: 'candle3',
-        category: 'scs',
-        image: '../images/3.jpg',
-        price: 23,
-        countInStock: 1000,
-        brand: 'Nike',
-        numReviews: 10,
-        description: 'fadfaf',
-    },
-    {
-        name: 'Candle4',
-        slug: 'candle4',
-        category: 'scs',
-        image: '../images/3.jpg',
-        price: 23,
-        countInStock: 0,
-        brand: 'Nike',
-        numReviews: 10,
-        description: 'fadfaf',
-    }
-]
+  ]

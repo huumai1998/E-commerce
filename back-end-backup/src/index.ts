@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { productRouter } from './routers/product';
 import { seedRouter } from './routers/seedRouter';
+import { userRouter } from './routers/auth.routes';
+
+
 
 dotenv.config();
 const app = express()
@@ -16,6 +19,11 @@ const PORT = process.env.PORT;
 
 app.use('/api/products', productRouter)
 app.use('/api/seed', seedRouter);
+
+// user API
+app.use('/api/users', userRouter);
+
+
 
 const MONGOODB =
     process.env.MONGOODB || ''
