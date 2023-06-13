@@ -38,7 +38,7 @@ export const Product: React.FC = () => {
       payload: { ...convertProductToCartItem(product!), quantity },
     })
     toast.success(`${product!.name} added to the cart`)
-    navigate('/')
+    // navigate('/')
   }
 
   

@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Footer, Navigation } from './components';
-import { Cart, MainPages, Product } from './pages';
+import { Cart, MainPages, Product, SigninPages } from './pages';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { Container } from "react-bootstrap";
@@ -24,7 +24,8 @@ function App() {
               <Route path="/" element={<MainPages />} />
               <Route path="product/:slug" element={<Product />}/>
               <Route path="/cart" element={<Cart />} />
-              {/* <Route path="*" element={<Navigate to="/" />} /> */}
+              <Route path="/signin" element={<SigninPages />} />
+              <Route path="*" element={<Navigate to="/" />} />
             </>
           </Routes>
         </Container>
