@@ -11,13 +11,13 @@ import EyeView from '../components/eyeViews'
 
 export const Product: React.FC = () => {
   const params = useParams()
-  const { name } = params
+  const { slug } = params
 
   const {
     data: product,
     isLoading,
     error,
-  } = useGetProductDetailsBySlugQuery(name!)
+  } = useGetProductDetailsBySlugQuery(slug!)
 
 
   return (

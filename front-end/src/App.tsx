@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <>
             <Route path="/" element={<MainPages />} />
-            <Route path="product/:name" element={<Product />}/>
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="product/:slug" element={<Product />}/>
+            {/* <Route path="*" element={<Navigate to="/" />} /> */}
           </>
         </Routes>
         <Footer />

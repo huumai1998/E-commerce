@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { Store } from '../Store';
 
 export const Navigation: React.FC = () => {
-  const {state: {mode}, 
+  const {state: {mode, cart}, 
   dispatch,
   } = useContext(Store)
 
@@ -27,7 +27,14 @@ export const Navigation: React.FC = () => {
                  className={mode === 'light' ? 'fa fa-sun' : 'fa fa-moon'}
                ></i>
           </Button>
-            <Link to="/" className='nav-link'>Cart</Link>
+            <Link to="/" className='nav-link'>
+              Cart
+               {cart.cartItems.length > 0 && (
+                 <Badge pill bg="danger">
+                   {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                 </Badge>
+               )}
+            </Link>
             <Link to="/" className='nav-link'>Sign In</Link>
           </Nav>
         </Container>

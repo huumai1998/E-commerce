@@ -24,7 +24,7 @@ return isLoading ? (
           <title>Candle Store</title>
         </Helmet>
           {products!.map((product) => (
-          <Col key={product.name} sm={6} md={4} lg={3}>
+          <Col key={product.slug} sm={6} md={4} lg={3}>
             <ProductItem product={product}/>
           </Col>
        ))}
