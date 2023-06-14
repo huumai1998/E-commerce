@@ -6,7 +6,7 @@ import "./scss/_main.scss"
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Provider } from './Store.tsx';
+import { Provider } from './reducers/Store.tsx';
 
 const queryClient = new QueryClient();
 

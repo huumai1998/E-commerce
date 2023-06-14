@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useGetProductDetailsBySlugQuery } from '../hooks/productHooks'
+import { useGetProductDetailsBySlugQuery } from '../reducers/actions/product.action'
 import { LoadingBox } from '../components'
 import MessageBox from '../components/messageBox'
 import { convertProductToCartItem, getError } from '../utils'
 import { ApiError } from '../types/apiError'
 import { Badge, Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import EyeView from '../components/eyeViews'
-import { Store } from '../Store'
+import { Store } from '../reducers/Store'
 import { toast } from 'react-toastify'
 
 export const Product: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Badge, Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import { Store } from '../Store';
+import { Store } from '../reducers/Store';
 
 export const Navigation: React.FC = () => {
   const {state: {mode, cart, userInfo}, 
@@ -58,7 +58,7 @@ export const Navigation: React.FC = () => {
                     <NavDropdown.Divider />
                     <Link
                       className="dropdown-item"
-                      to="#signout"
+                      to="/"
                       onClick={signoutHandler}
                     >
                       {' '}

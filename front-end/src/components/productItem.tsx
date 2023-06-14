@@ -3,7 +3,7 @@ import { Product } from "../types/Product"
 import { Link } from "react-router-dom"
 import EyeView from "./eyeViews"
 import { useContext } from "react";
-import { Store } from "../Store";
+import { Store } from "../reducers/Store";
 import { CartItem } from "../types/cart";
 import { convertProductToCartItem } from "../utils";
 import { toast } from "react-toastify";

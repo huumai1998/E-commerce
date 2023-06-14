@@ -1,17 +1,12 @@
 import express from "express"
 import asyncHandler from 'express-async-handler';
 import { ProductModel } from "../models/product";
+import { product } from "../controllers/product.controllers";
 
 
 export const productRouter = express.Router()
 // GET: api/products
-productRouter.get(
-  '/',
-  asyncHandler(async (req, res) => {
-    const products = await ProductModel.find()
-    res.json(products)
-  })
-)
+productRouter.get('/', product)
 
 // GET: api/name/tshirt
 productRouter.get(

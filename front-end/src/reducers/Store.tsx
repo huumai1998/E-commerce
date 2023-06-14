@@ -1,6 +1,6 @@
 import React from "react"
-import { Cart, CartItem } from "./types/cart"
-import { UserInfo } from "./types/userInfor"
+import { Cart, CartItem } from "../types/cart"
+import { UserInfo } from "../types/userInfor"
 
 type AppState = {
     mode: string

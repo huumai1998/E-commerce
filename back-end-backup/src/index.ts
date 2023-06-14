@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { productRouter } from './routers/product';
+import { productRouter } from './routers/product.routes';
 import { seedRouter } from './routers/seedRouter';
 import { userRouter } from './routers/auth.routes';
 

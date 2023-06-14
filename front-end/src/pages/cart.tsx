@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Store } from '../Store'
+import { Store } from '../reducers/Store'
 import { CartItem } from '../types/cart'
 import { toast } from 'react-toastify'
 import { Helmet } from 'react-helmet-async'

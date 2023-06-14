@@ -6,7 +6,7 @@ import MessageBox from '../components/messageBox';
 import { ApiError } from '../types/apiError';
 import ProductItem from '../components/productItem';
 import { Helmet } from 'react-helmet-async';
-import { useGetProductsQuery } from '../hooks/productHooks';
+import { useGetProductsQuery } from '../reducers/actions/product.action';
 
 
 
