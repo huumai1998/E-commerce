@@ -45,6 +45,7 @@ type AppState = {
             | { type: 'CART_ADD_ITEM'; payload: CartItem }
             | { type: 'CART_REMOVE_ITEM'; payload: CartItem }
             | { type: 'USER_SIGNIN'; payload: UserInfo }
+            | { type: 'USER_SIGNOUT' }
 
 
   function reducer(state: AppState, action: Action): AppState {
@@ -82,6 +83,29 @@ type AppState = {
       case 'USER_SIGNIN':
       return { ...state, userInfo: action.payload }
       
+      case 'USER_SIGNOUT':
+        return {
+          mode:
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light',
+          cart: {
+            cartItems: [],
+            paymentMethod: 'PayPal',
+            shippingAddress: {
+              fullName: '',
+              address: '',
+              postalCode: '',
+              city: '',
+              country: '',
+            },
+            itemsPrice: 0,
+            shippingPrice: 0,
+            taxPrice: 0,
+            totalPrice: 0,
+          },
+        }
       default:
         return state
     }

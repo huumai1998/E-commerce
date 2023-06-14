@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Badge, Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { Store } from '../Store';
 
 export const Navigation: React.FC = () => {
-  const {state: {mode, cart}, 
+  const {state: {mode, cart, userInfo}, 
   dispatch,
   } = useContext(Store)
 
@@ -14,6 +14,15 @@ export const Navigation: React.FC = () => {
 
   const switchModeHandler = () => {
     dispatch({ type: 'SWITCH_MODE' })
+  }
+
+  const signoutHandler = () => {
+    dispatch({ type: 'USER_SIGNOUT' })
+    localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItems')
+    localStorage.removeItem('shippingAddress')
+    localStorage.removeItem('paymentMethod')
+    window.location.href = '/signin'
   }
   return (
     <>
@@ -35,7 +44,32 @@ export const Navigation: React.FC = () => {
                  </Badge>
                )}
             </Link>
-            <Link to="/signin" className='nav-link'>Sign In</Link>
+            {userInfo ? (
+                  <NavDropdown
+                    className="header-link"
+                    title={`Hello, ${userInfo.name}`}
+                  >
+                    <Link to="/profile">
+                      <NavDropdown.Item>User Profile</NavDropdown.Item>
+                    </Link>
+                    <Link to="/orderhistory">
+                      <NavDropdown.Item>Order History</NavDropdown.Item>
+                    </Link>
+                    <NavDropdown.Divider />
+                    <Link
+                      className="dropdown-item"
+                      to="#signout"
+                      onClick={signoutHandler}
+                    >
+                      {' '}
+                      Sign Out{' '}
+                    </Link>
+                  </NavDropdown>
+                ) : (
+                    <Link to="/signin" className='nav-link'>
+                      Sign In
+                    </Link>
+                )}
           </Nav>
         </Container>
       </Navbar>
