@@ -32,31 +32,33 @@ function ProductItem({ product }: { product: Product }) {
     }
 
     return (
-      <Card>
+      <Card className="container">
         <Link to={`/product/${product.slug}`}>
           <img
             src={product.image}
-            className="card-img-top"
+            className="card-img-top image"
             alt={product.name}
             width={250}
             height={250}
           />
         </Link>
-        <Card.Body>
-          <Link to={`/product/${product.slug}`}>
-            <Card.Title>{product.name}</Card.Title>
-          </Link>
-          <EyeView numReviews={product.numReviews} />
-          <Card.Text>${product.price}</Card.Text>
-          <Card.Text>{product.countInStock} items left</Card.Text>
-          {product.countInStock === 0 ? (
-            <Button variant="light" disabled>
-              Out of stock
-            </Button>
-          ) : (
-            <Button onClick={() => addToCartHandler(convertProductToCartItem(product))}>Add to cart</Button>
-          )}
-        </Card.Body>
+        <div className="overlay">
+          <Card.Body>
+            <Link to={`/product/${product.slug}`}>
+              <Card.Title>{product.name}</Card.Title>
+            </Link>
+            <EyeView numReviews={product.numReviews} />
+            <Card.Text>${product.price}</Card.Text>
+            <Card.Text>{product.countInStock} items left</Card.Text>
+            {product.countInStock === 0 ? (
+              <Button variant="light" disabled>
+                Out of stock
+              </Button>
+            ) : (
+              <Button onClick={() => addToCartHandler(convertProductToCartItem(product))}>Add to cart</Button>
+            )}
+          </Card.Body>
+        </div>
       </Card>
     )
   }
