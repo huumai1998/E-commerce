@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import { productRouter } from './routers/product.routes';
 import { seedRouter } from './routers/seedRouter';
 import { userRouter } from './routers/auth.routes';
+import { orderRouter } from './routers/order.roters';
 
 
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({extended: true}))
 // products API
 app.use('/api/products', productRouter)
 app.use('/api/seed', seedRouter);
+app.use('/api/orders', orderRouter)
 
 // users API
 app.use('/api/users', userRouter);

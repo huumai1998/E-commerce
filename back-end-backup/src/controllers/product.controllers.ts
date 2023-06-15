@@ -1,4 +1,4 @@
-import { ProductModel } from "../models/product"
+import { ProductModel } from "../models/product.model"
 import asyncHandler from 'express-async-handler';
 
 // GET: api/products
