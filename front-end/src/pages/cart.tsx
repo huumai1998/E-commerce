@@ -28,7 +28,7 @@ export const Cart = () => {
       }
 
       const checkoutHandler =() => {
-        navigate('/signin?regirect=/shipping')
+        navigate('/shipping')
       }
 
       const removeItemHandler = (item: CartItem) => {
