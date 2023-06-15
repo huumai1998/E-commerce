@@ -10,6 +10,7 @@ import { Cart, MainPages, Product, Register, ShippingAddress, SigninPages } from
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { Container } from "react-bootstrap";
+import { ProtectedRoute } from "./components/protectedRoute";
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/signin" element={<SigninPages />} />
               <Route path="/signup" element={<Register />} />
-              <Route path="/shipping" element={<ShippingAddress />} />
+              <Route path="" element={<ProtectedRoute />}>
+                  <Route path="/shipping" element={<ShippingAddress />} />
+              </Route>
               <Route path="*" element={<Navigate to="/" />} />
             </>
           </Routes>
