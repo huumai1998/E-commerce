@@ -47,6 +47,7 @@ type AppState = {
             | { type: 'USER_SIGNIN'; payload: UserInfo }
             | { type: 'USER_SIGNOUT' }
             | { type: 'SAVE_SHIPPING_ADDRESS'; payload: ShippingAddress }
+            | { type: 'CART_CLEAR' }
 
 
   function reducer(state: AppState, action: Action): AppState {
@@ -80,6 +81,9 @@ type AppState = {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
         return { ...state, cart: { ...state.cart, cartItems } }
       }
+
+      case 'CART_CLEAR':
+        return { ...state, cart: { ...state.cart, cartItems: [] } }
 
       case 'USER_SIGNIN':
       return { ...state, userInfo: action.payload }

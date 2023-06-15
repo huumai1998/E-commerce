@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { Container } from "react-bootstrap";
 import { ProtectedRoute } from "./components/protectedRoute";
+import { PlaceOrderPage } from "./pages/placeOrderPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="" element={<ProtectedRoute />}>
                   <Route path="/shipping" element={<ShippingAddress />} />
               </Route>
+              <Route path="/placeorder" element={<PlaceOrderPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>
           </Routes>
