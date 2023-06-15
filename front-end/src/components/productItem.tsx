@@ -45,7 +45,7 @@ function ProductItem({ product }: { product: Product }) {
             <Link to={`/product/${product.slug}`}>
               <Card.Title>{product.name}</Card.Title>
             </Link>
-            <EyeView numReviews={product.numReviews} />
+            {/* <EyeView numReviews={product.numReviews} /> */}
             <Card.Text>${product.price}</Card.Text>
             <Card.Text>{product.countInStock} items left</Card.Text>
             {product.countInStock === 0 ? (
