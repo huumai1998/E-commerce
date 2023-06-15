@@ -20,10 +20,12 @@ const PORT = process.env.PORT;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
+// products API
 app.use('/api/products', productRouter)
 app.use('/api/seed', seedRouter);
 
-// user API
+// users API
 app.use('/api/users', userRouter);
 
 

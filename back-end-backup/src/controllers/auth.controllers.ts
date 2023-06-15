@@ -1,4 +1,4 @@
-import { UserModel } from "../models/auth.model";
+import { User, UserModel } from "../models/auth.model";
 import { generateToken } from "../utils";
 import asyncHandler from 'express-async-handler';
 import bcrypt from 'bcryptjs';
@@ -33,5 +33,32 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
         }
     } catch (error) {
         res.status(500).json('Sever error!')
+    }
+})
+
+
+export const register = asyncHandler(async (req: Request, res: Response) => {
+    try {
+        const userExist = await UserModel.findOne({email: req.body.email})
+
+        if (userExist) {
+            res.status(400).json({msg: `${userExist.email} is alreay exist, please try another one!`})
+        }
+
+        const user = await UserModel.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password),
+        } as User)
+
+        res.send({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user)
+        })
+    } catch (error) {
+        res.status(500).json('Error')
     }
 })
