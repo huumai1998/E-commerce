@@ -20,7 +20,7 @@ export const PlaceOrderPage = () => {
       cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
     )
     cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10)
-    cart.taxPrice = round2(0.15 * cart.itemsPrice)
+    cart.taxPrice = round2(0.05 * cart.itemsPrice)
     cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice
 
     const { mutateAsync: createOrder, isLoading } = useCreateOrderMutation()
@@ -92,7 +92,7 @@ export const PlaceOrderPage = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="img-fluid rounded thumbnail"
+                        className="img-in-place-order"
                       ></img>{' '}
                       <Link to={`/product/${item.slug}`}>{item.name}</Link>
                     </Col>
