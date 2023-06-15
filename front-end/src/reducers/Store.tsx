@@ -46,6 +46,7 @@ type AppState = {
             | { type: 'CART_REMOVE_ITEM'; payload: CartItem }
             | { type: 'USER_SIGNIN'; payload: UserInfo }
             | { type: 'USER_SIGNOUT' }
+            | { type: 'SAVE_PAYMENT_METHOD'; payload: string }
             | { type: 'SAVE_SHIPPING_ADDRESS'; payload: ShippingAddress }
             | { type: 'CART_CLEAR' }
 
@@ -86,7 +87,7 @@ type AppState = {
         return { ...state, cart: { ...state.cart, cartItems: [] } }
 
       case 'USER_SIGNIN':
-      return { ...state, userInfo: action.payload }
+        return { ...state, userInfo: action.payload }
       
       case 'USER_SIGNOUT':
         return {
@@ -112,7 +113,12 @@ type AppState = {
           },
         }
 
-        case 'SAVE_SHIPPING_ADDRESS':
+      case 'SAVE_PAYMENT_METHOD':
+        return {
+          ...state,
+          cart: { ...state.cart, paymentMethod: action.payload },
+        }
+      case 'SAVE_SHIPPING_ADDRESS':
           return {
             ...state,
             cart: {
