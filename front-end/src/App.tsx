@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Footer, Navigation } from './components';
-import { Cart, MainPages, Product, Register, SigninPages } from './pages';
+import { Cart, MainPages, Product, Register, ShippingAddress, SigninPages } from './pages';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { Container } from "react-bootstrap";
@@ -26,6 +26,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/signin" element={<SigninPages />} />
               <Route path="/signup" element={<Register />} />
+              <Route path="/shipping" element={<ShippingAddress />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>
           </Routes>
