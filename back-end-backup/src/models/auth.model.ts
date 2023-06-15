@@ -7,7 +7,7 @@ export class User {
   public name!: string;
   @prop({ required: true, unique: true })
   public email!: string;
-  @prop({ required: true })
+  @prop({ required: true, min: 6, max: 20 })
   public password!: string;
   @prop({ required: true, default: false })
   public isAdmin!: boolean;

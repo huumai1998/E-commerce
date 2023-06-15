@@ -42,7 +42,7 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
         const userExist = await UserModel.findOne({email: req.body.email})
 
         if (userExist) {
-            res.status(400).json({msg: `${userExist.email} is alreay exist, please try another one!`})
+             res.status(400).json({ message: `${userExist.email} is already exist, please try another one!` })
         }
 
         const user = await UserModel.create({

@@ -38,8 +38,6 @@ function ProductItem({ product }: { product: Product }) {
             src={product.image}
             className="card-img-top image"
             alt={product.name}
-            width={250}
-            height={250}
           />
         </Link>
         <div className="overlay">
