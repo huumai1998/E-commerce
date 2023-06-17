@@ -6,6 +6,7 @@ import { productRouter } from './routers/product.routes';
 import { seedRouter } from './routers/seedRouter';
 import { userRouter } from './routers/auth.routes';
 import { orderRouter } from './routers/order.roters';
+import { keyRouter } from './routers/key.routes';
 
 
 
@@ -29,6 +30,8 @@ app.use('/api/orders', orderRouter)
 
 // users API
 app.use('/api/users', userRouter);
+
+app.use('/api/keys', keyRouter);
 
 
 
